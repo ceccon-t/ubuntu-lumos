@@ -27,10 +27,12 @@ jobs:
         run: npm ci
 
       - name: Build AppImage and Debian package
-        run: npm run build:linux
+        # Keep packaging separate from publishing: electron-builder otherwise
+        # attempts an implicit GitHub publish when this workflow runs on a tag.
+        run: npm run build:linux -- --publish never
 
       - name: Create draft GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           draft: true
           generate_release_notes: true
