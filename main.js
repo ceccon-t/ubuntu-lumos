@@ -16,6 +16,12 @@ function createWindow() {
 
   window.setMenuBarVisibility(false);
   window.setMenu(null);
+  window.webContents.on('before-input-event', (event, input) => {
+    if (input.type === 'keyDown' && input.key === 'F11') {
+      event.preventDefault();
+      window.setFullScreen(!window.isFullScreen());
+    }
+  });
   window.maximize();
   window.once('ready-to-show', () => window.show());
   window.loadFile('index.html');
