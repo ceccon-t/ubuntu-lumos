@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 const path = require('node:path');
 
 function createWindow() {
@@ -14,12 +14,15 @@ function createWindow() {
     },
   });
 
+  window.setMenuBarVisibility(false);
+  window.setMenu(null);
   window.maximize();
   window.once('ready-to-show', () => window.show());
   window.loadFile('index.html');
 }
 
 app.whenReady().then(() => {
+  Menu.setApplicationMenu(null);
   ipcMain.on('close-application', () => app.quit());
   createWindow();
 
