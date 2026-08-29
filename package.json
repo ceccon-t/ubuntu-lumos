@@ -4,9 +4,35 @@
   "description": "A minimal Lumos desktop application.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux"
   },
   "devDependencies": {
-    "electron": "^37.0.0"
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.lumos.app",
+    "productName": "Lumos",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+      "AppImage",
+      "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "Lumos"
+    }
   }
 }
