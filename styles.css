@@ -23,7 +23,7 @@ body {
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 8px 14px 9px;
-  color: #4b4b4b;
+  color: transparent;
   background: transparent;
   cursor: pointer;
   font: 500 14px/1 inherit;
@@ -32,7 +32,8 @@ body {
   transition: color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.nox:hover {
+.nox:hover,
+.nox:focus-visible {
   color: #fff;
   background: #1b1b1d;
   box-shadow: 0 7px 18px rgb(0 0 0 / 14%);
