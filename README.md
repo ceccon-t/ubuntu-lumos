@@ -14,6 +14,12 @@ You can also press `Ecs` to close Lumos, or `F11` to toggle fullscreen mode.
 
 ## How to run
 
+Download the latest packages from the [Releases](https://github.com/ceccon-t/ubuntu-lumos/releases) section of the repository. 
+
+When downloading, choose if you want the runnable version (.AppImage), or the installable one (.deb), and set the chosen one up accordingly.
+
+### Run the application during development
+
 Install the dependencies and start the application:
 
 ```bash
