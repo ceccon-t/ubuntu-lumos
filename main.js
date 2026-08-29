@@ -21,6 +21,11 @@ function createWindow() {
       event.preventDefault();
       window.setFullScreen(!window.isFullScreen());
     }
+
+    if (input.type === 'keyDown' && input.key === 'Escape') {
+      event.preventDefault();
+      app.quit();
+    }
   });
   window.maximize();
   window.once('ready-to-show', () => window.show());
