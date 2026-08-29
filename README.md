@@ -4,6 +4,8 @@
 
 Simple desktop application that opens a clean, maximized white window.
 
+![A white monitor illuminating a low-light room](docs/images/lumos-illumination.png)
+
 ## How to use
 
 Lumos has intentionally very little interface. Move the mouse to the top-right corner to reveal **Nox** and click it to close the application.
